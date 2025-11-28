@@ -1,0 +1,35 @@
+window {
+	background-color: rgba(12, 12, 12, 0.35);
+	border-radius: 12px;
+	border: none;
+	padding: 12px;
+}
+
+#input {
+	background-color: rgba(255,255,255,0.06);
+	font-family: "CaskaydiaCove NFM";
+	color: #b8b8b8;
+	border-radius: 8px;
+	padding: 6px 10px;
+}
+
+#inner-box {
+	background-color: transparent;
+	padding-top: 8px;
+}
+
+#entry {
+	padding: 6px;
+	color: #cccccc;
+}
+
+#entry:selected {
+	background-color: rgba(255,255,255,0.12);
+	color: white;
+	border-radius: 8px;
+}
+
+#entry:selected {
+	background-color: rgba(255,255,255,0.10);
+	color: #ffffff;
+}

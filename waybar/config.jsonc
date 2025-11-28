@@ -17,15 +17,15 @@
         "sway/window"
     ],
     "modules-right": [
-//        "idle_inhibitor",
+        "idle_inhibitor",
         "pulseaudio",
         "network",
         "power-profiles-daemon",
-//        "cpu",
-//        "memory",
-//        "temperature",
+//      "cpu",
+//      "memory",
+//      "temperature",
         "backlight",
-//        "sway/language",
+//      "sway/language",
         "battery",
         "clock",
         "tray"
@@ -117,7 +117,7 @@
     },
     "tray": {
         // "icon-size": 21,
-        "spacing": 10,
+        "spacing": 10
         // "icons": {
         //   "blueman": "bluetooth",
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
@@ -125,6 +125,7 @@
     },
     "clock": {
         // "timezone": "America/New_York",
+        "timezone": "Australia/Sydney",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },

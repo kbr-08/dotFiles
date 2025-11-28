@@ -54,10 +54,25 @@ button:hover {
     background-color: #a37800;
 }
 
+#window {
+  /* Styles for the window module */
+  
+  background-color: transparent;
+  color: rgba(233, 216, 166, 0.8);
+}
+
+#workspaces {
+  /* Styles for the workspaces module */
+  
+  background-color: transparent;
+  color: rgba(233, 216, 166, 0.8);
+}
+
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ffffff;
+    /* color: #ffffff; */
+    color: rgba(233, 216, 166, 0.8);
 }
 
 #workspaces button:hover {
@@ -65,12 +80,17 @@ button:hover {
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
+    /* background-color: #64727D; */
+    background-color: transparent;
     box-shadow: inset 0 -3px #ffffff;
 }
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
+}
+
+#workspaces button.active {
+    color: rgba(10, 147, 150, 1);    
 }
 
 #mode {
@@ -97,7 +117,8 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
     padding: 0 10px;
-    color: #E9D8A6;
+    /* color: #E9D8A6; */
+    color: rgba(233, 216, 166, 0.8);
 }
 
 #window,
@@ -114,7 +135,13 @@ button:hover {
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0;
 }
+
+#idle_inhibitor {
+    padding: 0px 7px;
+}
+
 #backlight{
+
     padding: 0 5px 0 5px;
 
     border-radius: 50% 0% 0% 50%;
@@ -279,7 +306,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: transparent;
 }
 
 #tray > .passive {
@@ -292,12 +319,15 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    /* background-color: #2d3436; */
+    background-color: transparent;
+    color: rgba(233, 216, 166, 0.75)
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    /* background-color: #ecf0f1; */
+    background-color: transparent;
+    color: #E9D8A6;
 }
 
 #mpd {

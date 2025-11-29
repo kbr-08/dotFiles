@@ -6,8 +6,8 @@
 window#waybar {
    /* background-color: rgba(43, 48, 59, 0.5); */
     background-color: transparent;
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
+    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+    /* color: #ffffff; */
     transition-property: background-color;
     transition-duration: .5s;
     border: none;
@@ -51,7 +51,7 @@ button:hover {
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    background-color: #a37800;
+    background-color: transparent;
 }
 
 #window {
@@ -69,7 +69,7 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 3px;
     background-color: transparent;
     /* color: #ffffff; */
     color: rgba(233, 216, 166, 0.8);
@@ -116,7 +116,7 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 10px;
+    padding: 0 1px;
     /* color: #E9D8A6; */
     color: rgba(233, 216, 166, 0.8);
 }
@@ -141,47 +141,20 @@ button:hover {
 }
 
 #backlight{
-
-    padding: 0 5px 0 5px;
-
-    border-radius: 50% 0% 0% 50%;
-    border-left: 3px solid #424C56;
-    border-right: 0px;
-    border-top: 0px solid #424C56;
-    border-bottom: 0px solid #424C56;
-
     background-color: transparent;
 }
 
 #clock {
-/*    padding: 0 5px;*/
-    padding: 0px 5px 0px 5px;
-    border-radius: 0% 50% 50% 0%;
-    /*border: 1px solid #424C56;*/
-    border-left: 0px solid #424C56;
-    border-right: 3px solid #424C56;
-    border-top: 0px solid #424C56;
-    border-bottom: 0px solid #424C56;
-/*    background-color: rgba(0,0,0,0.3);*/
     background-color: transparent;
 }
 
 #battery {
     padding: 0 5px 0 5px;
-    border-radius: 0%;
-
-    border-left: 0px;
-    border-right: 0px;
-    border-top: 0px solid #424C56;
-    border-bottom: 0px solid #424C56;
-
-   /* background-color: rgba(0,0,0,0.3);*/
    background-color: transparent;
 }
 
 #battery.charging, #battery.plugged {
     color: #0A9396;
-/*    background-color: rgba(0,0,0,0.8);*/
     background-color: transparent;
 }
 
@@ -204,26 +177,21 @@ button:hover {
 }
 
 #power-profiles-daemon {
-    padding-right: 15px;
+    padding-right: 10px;
+    padding-left: 5px;
 }
 
 #power-profiles-daemon.performance {
-   /* background-color: #f53c3c;*/
     background-color: transparent;
-   /* color: #ffffff;*/
     color: #9B2226;
 }
 
 #power-profiles-daemon.balanced {
-/*    background-color: #2980b9;
-    color: #ffffff;*/
     background-color: transparent;
     color: #0A9396;
 }
 
 #power-profiles-daemon.power-saver {
-/*    background-color: #2ecc71;
-    color: #000000;*/
     background-color: transparent;
     color: #2ecc71;
 }
@@ -246,12 +214,11 @@ label:focus {
 }
 
 #backlight {
-/*    background-color: #90b1b1;*/
     background-color:  transparent;
 }
 
 #network {
-/*    background-color: #2980b9;*/
+    padding-left: 5px;
     background-color: transparent;
 }
 
@@ -260,16 +227,15 @@ label:focus {
 }
 
 #pulseaudio {
-/*    background-color: #f1c40f;
-    color: #000000;*/
-
+    padding-right: 10px;
+    padding-left: 5px;
     background-color: transparent;
     color: #0A9396;
 }
 
 #pulseaudio.muted {
-/*    background-color: #90b1b1;
-    color: #2a5c45;*/
+    padding-right: 10px;
+    padding-left: 5px;
     background-color: transparent;
     color: #AE2012;
 }
@@ -319,13 +285,11 @@ label:focus {
 }
 
 #idle_inhibitor {
-    /* background-color: #2d3436; */
     background-color: transparent;
     color: rgba(233, 216, 166, 0.75)
 }
 
 #idle_inhibitor.activated {
-    /* background-color: #ecf0f1; */
     background-color: transparent;
     color: #E9D8A6;
 }

@@ -60,8 +60,8 @@ font-size = 12
 background-opacity = 0.7
 
 # --- inbuilt theme
-# theme = Synthwave Alpha
-theme = Catppuccin Mocha
+theme = Synthwave Alpha
+# theme = Catppuccin Mocha
 # --- slightly dimmed foreground
 # foreground = #bac2de
 foreground = #a6adc8
@@ -71,4 +71,4 @@ window-padding-x = 10
 window-padding-y = 10
 
 # --- tmux thing
-# command = $HOME/.config/ghostty/start_tmux.sh
+command = $HOME/.config/ghostty/start_tmux.sh

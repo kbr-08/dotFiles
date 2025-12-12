@@ -1,0 +1,239 @@
+/* -----------------------------------------------------------------------------
+ * Kanagawa Dragon (Eye Saver / Warm)
+ * Optimized for long sessions: Low saturation, Warm background, No Blue light.
+ * -------------------------------------------------------------------------- */
+
+/* Backgrounds - The "Dragon Ink" (Warm, deep brownish-black) */
+@define-color base      #181616;  /* Main Background - Very deep, warm black */
+@define-color mantle    #12120f;  /* Darker sidebar/menu background */
+@define-color crust     #0d0c0c;  /* Darkest edge */
+
+/* Text - "Fuji White" (Muted, slightly warm grey - not blinding white) */
+@define-color text      #c5c9c5;  
+@define-color subtext1  #a6a69c;
+@define-color subtext0  #8ba4b0;  /* Slightly cool grey for contrast */
+
+/* Surface - "Sumi Ink" (Soft dark greys for borders) */
+@define-color surface2  #49443C;
+@define-color surface1  #2D4F67;  /* Deep muted slate (for active borders) */
+@define-color surface0  #282727;  /* Inactive elements */
+
+/* Accents - The "Subtle Purples" you wanted */
+@define-color mauve     #957fb8;  /* "Oni Violet" - Very soft, non-distracting */
+@define-color lavender  #938aa9;  /* Muted Lavender */
+@define-color blue      #658594;  /* "Crystal Blue" - Muted slate, not bright blue */
+@define-color sapphire  #7aa89f;  
+@define-color sky       #7fb4ca;
+@define-color teal      #6a9589;
+@define-color green     #87a987;  /* "Autumn Green" - Desaturated */
+@define-color yellow    #c4b28a;  /* "Ronin Yellow" - Like old paper */
+@define-color red       #c4746e;  /* "Samurai Red" - Soft pinkish red */
+/* -----------------------------------------------------------------------------
+ * Global Styling
+ * -------------------------------------------------------------------------- */
+
+* {
+    border: none;
+    border-radius: 0;
+    /* font-family: "IntoneMono Nerd Font Mono", sans-serif; */
+    font-family: "FiraCode Nerd Font", sans-serif;
+    font-size: 11px;
+    min-height: 0;
+    background-color: transparent; /* Reset all backgrounds */
+}
+
+window#waybar {
+    background-color: transparent;
+    color: @text;
+}
+
+/* -----------------------------------------------------------------------------
+ * Module Containers (Left, Center, Right)
+ * -------------------------------------------------------------------------- */
+
+.modules-left {
+    background-color: @base;       /* Dark, matte background */
+    border: 1px solid @surface0;   /* Subtle border for definition */
+    border-radius: 10px;           /* Soft rounded corners */
+    padding: 2px 10px;             /* Internal breathing room */
+    margin: 2px 4px 0 4px;         /* Spacing from screen edge TOP RIGHT BOTTOM LEFT*/
+}
+
+.modules-right {
+    background-color: @base;
+    border: 1px solid @surface0;
+    border-radius: 10px;
+    padding: 2px 10px;
+    margin: 2px 4px 0 0;
+}
+
+.modules-center {
+    background-color: @surface0;
+    border: 1px solid @base;
+    border-radius: 10px;
+    padding: 2px 10px;
+    margin: 2px 0 0 0;
+}
+
+/* -----------------------------------------------------------------------------
+ * Tooltips
+ * -------------------------------------------------------------------------- */
+
+tooltip {
+    background-color: @base;
+    border: 1px solid @surface1;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+tooltip label {
+    color: @text;
+    font-size: 14px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Group: Network (The Drawer)
+ * -------------------------------------------------------------------------- */
+
+/* The expanded pill background */
+#network.network-details {
+    background-color: @surface0;   /* Slightly lighter than base to differentiate */
+    color: @text;
+    border-radius: 8px;
+    padding: 0 10px;
+    margin-right: 10px;
+}
+
+/* The Icon (Handle) */
+#network {
+    color: @green; /* Clear indication of connection */
+    /* padding-left: 5px; */
+    padding-right: 5px;
+}
+
+/* Disconnected State */
+#network.disconnected {
+    color: @red;
+}
+
+/* The Text (Inside Drawer) */
+#network.text {
+    color: @subtext0; /* Slightly softer white for the technical text */
+    /* font-weight: bold; */
+}
+
+/* -----------------------------------------------------------------------------
+ * Individual Modules
+ * -------------------------------------------------------------------------- */
+
+#clock {
+    color: @text;
+    /* font-weight: bold; */
+}
+
+/* Battery */
+#battery {
+    color: @text;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @yellow;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Hardware Group */
+#cpu {
+    color: @lavender; /* Soft purple */
+}
+
+#memory {
+    color: @lavender; /* Soft blue */
+}
+
+/* Backlight */
+#backlight {
+    color: @yellow; /* Sun color, but pastel */
+}
+
+/* Pulseaudio */
+#pulseaudio {
+    color: @lavender;
+}
+
+#pulseaudio.muted {
+    color: @surface2; /* Greyed out when muted */
+}
+
+/* Tray */
+#tray {
+    padding-left: 10px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @red;
+}
+
+#tray menu {
+    background-color: @mantle;
+    border: 1px solid @surface1;
+}
+
+/* MPD (Music) */
+#mpd {
+    color: @subtext0;
+}
+#mpd.playing {
+    color: @teal;
+}
+
+/* Keyboard State */
+#keyboard-state {
+    color: @subtext1;
+}
+
+/* Wlr Taskbar */
+#taskbar button {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 4px;
+    margin-right: 5px;
+    color: @subtext0;
+}
+
+#taskbar button.active {
+    background-color: @surface1; /* Subtle highlight for active window */
+    color: @text;
+}
+
+#taskbar button:hover {
+    background-color: @surface0;
+    color: @text;
+}
+
+/* -----------------------------------------------------------------------------
+ * Animations
+ * -------------------------------------------------------------------------- */
+
+@keyframes blink {
+    to {
+        color: @text;
+    }
+}

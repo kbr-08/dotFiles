@@ -1,0 +1,55 @@
+# ~/.config/alacritty/alacritty.toml
+
+[window]
+# Padding keeps text away from the window edges
+padding = { x = 10, y = 10 }
+
+# Opacity: 0.0 is transparent, 1.0 is opaque.
+# In Niri, ensure you haven't forced opacity elsewhere if this doesn't apply.
+opacity = 0.95
+
+# "None" lets Niri handle the borders/decoration completely
+decorations = "None"
+
+# Startup Mode: 'Windowed', 'Maximized', 'Fullscreen'
+startup_mode = "Windowed"
+
+[font]
+size = 11.0
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Bold"
+
+# --- Kanagawa Dragon Color Scheme ---
+[colors.primary]
+background = "#181616"  # Dragon Ink
+foreground = "#938AA9"  # muted lavender-grey
+
+[colors.normal]
+black   = "#0d0c0c"
+red     = "#c4746e"
+green   = "#8a9a7b"
+yellow  = "#c4b28a"
+blue    = "#8ba4b0"
+magenta = "#a292a3"
+cyan    = "#8ea4a2"
+white   = "#c8c6c6"
+
+[colors.bright]
+black   = "#a6a69c"
+red     = "#E46876"
+green   = "#87a987"
+yellow  = "#e6c384"
+blue    = "#7fb4ca"
+magenta = "#938aa9"
+cyan    = "#7aa89f"
+white   = "#c5c9c5"
+
+[colors.cursor]
+text = "#181616"
+cursor = "#c8c6c6"

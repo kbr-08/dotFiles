@@ -133,11 +133,11 @@ button:hover {
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+    margin-right: 5px;
 }
 
 #idle_inhibitor {
-    padding: 0px 7px;
+    padding: 0px 9px;
 }
 
 #backlight{
@@ -365,10 +365,11 @@ label:focus {
 }
 
 #bluetooth {
-    color: rgba(233, 216, 166, 0.75);
-    background-color: transparent;
     padding-right: 5px;
     padding-left: 5px;
+    font-size: 12px;
+    color: rgba(233, 216, 166, 0.75);
+    background-color: transparent;
 }
 
 #bluetooth.connected {
@@ -382,5 +383,5 @@ label:focus {
     padding-right: 5px;
     padding-left: 5px;
     background-color: transparent;
-    color: #AE2012;
+    color: rgba(139, 139, 139, 0.75);
 }

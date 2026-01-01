@@ -18,6 +18,7 @@
     ],
     "modules-right": [
         "idle_inhibitor",
+        "bluetooth",
         "pulseaudio",
         "network",
         "power-profiles-daemon",
@@ -209,6 +210,19 @@
         },
         "on-click": "pavucontrol"
     },
+    // --- ADDED BLUETOOTH MODULE CONFIGURATION ---
+    "bluetooth": {
+        "format": "",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "sh -lc '~/.local/bin/toggle_bluetooth.sh'",
+        "on-click-right":"sh -lc 'blueman-manager"
+    },
+    // ---------------------------------------------
     "custom/media": {
         "format": "{icon} {text}",
         "return-type": "json",

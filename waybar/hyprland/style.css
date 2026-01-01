@@ -363,3 +363,24 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
+
+#bluetooth {
+    color: rgba(233, 216, 166, 0.75);
+    background-color: transparent;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#bluetooth.connected {
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: transparent;
+    color: #0A9396;   
+}
+
+#bluetooth.off, #bluetooth.disabled {
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: transparent;
+    color: #AE2012;
+}

@@ -66,6 +66,8 @@ button:hover {
   
   background-color: transparent;
   color: rgba(233, 216, 166, 0.8);
+
+  padding: 0 0 0 7px;
 }
 
 #workspaces button {
@@ -90,7 +92,7 @@ button:hover {
 }
 
 #workspaces button.active {
-    color: rgba(10, 147, 150, 1);    
+    color: rgba(10, 147, 150, 1); 
 }
 
 #mode {
@@ -146,6 +148,7 @@ button:hover {
 
 #clock {
     background-color: transparent;
+    padding: 0 7px 0 0;
 }
 
 #battery {

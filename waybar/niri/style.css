@@ -122,6 +122,14 @@ tooltip label {
     /* font-weight: bold; */
 }
 
+#custom-vpn.connected {
+    color: @green;
+}
+
+#custom-vpn.disconnected {
+    color: @red;
+}
+
 /* -----------------------------------------------------------------------------
  * Individual Modules
  * -------------------------------------------------------------------------- */
@@ -178,7 +186,7 @@ tooltip label {
 
 /* Tray */
 #tray {
-    padding-left: 10px;
+    padding-left: 2px;
 }
 
 #tray > .passive {

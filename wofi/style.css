@@ -1,8 +1,9 @@
 window {
-	background-color: rgba(12, 12, 12, 0.85);
+	background-color: rgba(12, 12, 12, 0.8);
 	border-radius: 12px;
 	border: none;
 	padding: 12px;
+	margin: 0px;
 }
 
 #input {
@@ -11,25 +12,78 @@ window {
 	color: #b8b8b8;
 	border-radius: 8px;
 	padding: 6px 10px;
+	margin: 5px;
 }
 
 #inner-box {
 	background-color: transparent;
-	padding-top: 8px;
+	padding-top: 5px;
+	margin: 5px;
 }
 
 #entry {
-	padding: 6px;
-	color: #cccccc;
+	padding: 5px;
+	color: #b8b8b8;
 }
 
 #entry:selected {
 	background-color: rgba(255,255,255,0.12);
-	color: white;
-	border-radius: 8px;
+	color: #cac9c9;
+	border-radius: 5px;
+	/* font-weight: bold; */
 }
 
-#entry:selected {
-	background-color: rgba(255,255,255,0.10);
-	color: #ffffff;
+#entry:nth-child(even) {
+	background-color: rgba(0,0,0,0.1);
+	color: rgb(0, 255, 255,1);
+}
+
+#entry:nth-child(odd) {
+	background-color: rgba(0,0,0,0.5);
+	color: rgba(0,255,255,0.8);
+}
+
+#entry.activatable {
+	background-color: rgba(0,0,0,0.3);
+	border-radius: 5px;
+}
+
+#entry.activatable #text {
+	color: rgba(0,255,8,1);
+	font-weight: normal;
+	/* font-style: italic; */
+}
+
+#entry.activatable:selected {
+	border: 1px dashed rgba(0,255,8,1);
+    background-color: rgba(0,255,255,0.05);
+}
+
+#entry.activatable:selected #text {
+	font-style: normal;
+	font-weight: bold;
+	color: rgba(0,255,255,0.5);
+}
+
+#entry arrow {
+    font-weight: normal;
+    color: rgba(0,255,255,0.5);
+}
+
+#entry arrow:hover {
+    font-weight: bold;
+    color: cyan;
+}
+
+#expander-box {
+	border-radius: 5px;
+	border: 1px solid gray;
+	background-color: rgba(26,30,36,0.01);
+	margin: 2px;
+}
+
+#text {
+	color: #b8b8b8;
+	margin: 5px;
+	border: 0px solid cyan;
 }

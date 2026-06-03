@@ -3,43 +3,43 @@
  * Optimized for long sessions: Low saturation, Warm background, No Blue light.
  * -------------------------------------------------------------------------- */
 
-/* Backgrounds - The "Dragon Ink" (Warm, deep brownish-black) */
-@define-color base      #181616;  /* Main Background - Very deep, warm black */
-@define-color mantle    #12120f;  /* Darker sidebar/menu background */
-@define-color crust     #0d0c0c;  /* Darkest edge */
+/* Backgrounds */
+@define-color base      #181616;
+@define-color mantle    #12120f;
+@define-color crust     #0d0c0c;
 
-/* Text - "Fuji White" (Muted, slightly warm grey - not blinding white) */
-@define-color text      #c5c9c5;  
+/* Text */
+@define-color text      #c5c9c5;
 @define-color subtext1  #a6a69c;
-@define-color subtext0  #8ba4b0;  /* Slightly cool grey for contrast */
+@define-color subtext0  #8ba4b0;
 
-/* Surface - "Sumi Ink" (Soft dark greys for borders) */
+/* Surfaces */
 @define-color surface2  #49443C;
-@define-color surface1  #2D4F67;  /* Deep muted slate (for active borders) */
-@define-color surface0  #282727;  /* Inactive elements */
+@define-color surface1  #2D4F67;
+@define-color surface0  #282727;
 
-/* Accents - The "Subtle Purples" you wanted */
-@define-color mauve     #957fb8;  /* "Oni Violet" - Very soft, non-distracting */
-@define-color lavender  #938aa9;  /* Muted Lavender */
-@define-color blue      #658594;  /* "Crystal Blue" - Muted slate, not bright blue */
-@define-color sapphire  #7aa89f;  
+/* Accents */
+@define-color mauve     #957fb8;
+@define-color lavender  #938aa9;
+@define-color blue      #658594;
+@define-color sapphire  #7aa89f;
 @define-color sky       #7fb4ca;
 @define-color teal      #6a9589;
-@define-color green     #87a987;  /* "Autumn Green" - Desaturated */
-@define-color yellow    #c4b28a;  /* "Ronin Yellow" - Like old paper */
-@define-color red       #c4746e;  /* "Samurai Red" - Soft pinkish red */
+@define-color green     #87a987;
+@define-color yellow    #c4b28a;
+@define-color red       #c4746e;
+
 /* -----------------------------------------------------------------------------
- * Global Styling
+ * Global Reset
  * -------------------------------------------------------------------------- */
 
 * {
     border: none;
     border-radius: 0;
-    /* font-family: "IntoneMono Nerd Font Mono", sans-serif; */
     font-family: "FiraCode Nerd Font", sans-serif;
     font-size: 11px;
     min-height: 0;
-    background-color: transparent; /* Reset all backgrounds */
+    background-color: transparent;
 }
 
 window#waybar {
@@ -52,11 +52,11 @@ window#waybar {
  * -------------------------------------------------------------------------- */
 
 .modules-left {
-    background-color: @base;       /* Dark, matte background */
-    border: 1px solid @surface0;   /* Subtle border for definition */
-    border-radius: 10px;           /* Soft rounded corners */
-    padding: 2px 10px;             /* Internal breathing room */
-    margin: 2px 4px 0 4px;         /* Spacing from screen edge TOP RIGHT BOTTOM LEFT*/
+    background-color: @base;
+    border: 1px solid @surface0;
+    border-radius: 10px;
+    padding: 2px 10px;
+    margin: 2px 4px 0 4px;
 }
 
 .modules-right {
@@ -92,54 +92,119 @@ tooltip label {
 }
 
 /* -----------------------------------------------------------------------------
- * Group: Network (The Drawer)
+ * Module Spacing — padding separates modules inside groups
  * -------------------------------------------------------------------------- */
 
-/* The expanded pill background */
-#network.network-details {
-    background-color: @surface0;   /* Slightly lighter than base to differentiate */
-    color: @text;
-    border-radius: 8px;
-    padding: 0 10px;
-    margin-right: 10px;
+#network,
+#custom-vpn_provider,
+#custom-vpn_server,
+#custom-vpn_city,
+#custom-vpn_exit,
+#custom-vpn_tunnel,
+#custom-carrier_ip,
+#custom-conn_details,
+#custom-dns,
+#custom-dns_stub,
+#backlight {
+    padding: 0 6px;
 }
 
-/* The Icon (Handle) */
+/* -----------------------------------------------------------------------------
+ * Connection Group Drawer
+ * -------------------------------------------------------------------------- */
+
 #network {
-    color: @green; /* Clear indication of connection */
-    /* padding-left: 5px; */
-    padding-right: 5px;
+    color: @green;
 }
 
-/* Disconnected State */
 #network.disconnected {
     color: @red;
 }
 
-/* The Text (Inside Drawer) */
-#network.text {
-    color: @subtext0; /* Slightly softer white for the technical text */
-    /* font-weight: bold; */
-}
-
-#custom-vpn.connected {
-    color: @green;
-}
-
-#custom-vpn.disconnected {
-    color: @red;
+.conn-details {
+    background-color: @surface0;
+    color: @subtext0;
+    border-radius: 8px;
+    padding: 0 10px;
+    margin-right: 6px;
 }
 
 /* -----------------------------------------------------------------------------
- * Individual Modules
+ * VPN Modules
+ * -------------------------------------------------------------------------- */
+
+#custom-vpn_provider {
+    color: @mauve;
+}
+
+#custom-vpn_server {
+    color: @text;
+}
+
+#custom-vpn_city {
+    color: @subtext0;
+    background-color: @surface0;
+    border-radius: 8px;
+    padding: 0 10px;
+    margin-right: 6px;
+}
+
+#custom-vpn_exit {
+    color: @sky;
+}
+
+#custom-vpn_tunnel {
+    color: @subtext0;
+    background-color: @surface0;
+    border-radius: 8px;
+    padding: 0 10px;
+    margin-right: 6px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Carrier IP
+ * -------------------------------------------------------------------------- */
+
+#custom-carrier_ip {
+    color: @subtext1;
+}
+
+/* -----------------------------------------------------------------------------
+ * DNS Group Drawer
+ * -------------------------------------------------------------------------- */
+
+#custom-dns {
+    color: @teal;
+}
+
+#custom-dns_stub {
+    color: @subtext0;
+    background-color: @surface0;
+    border-radius: 8px;
+    padding: 0 10px;
+    margin-right: 6px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Backlight
+ * -------------------------------------------------------------------------- */
+
+#backlight {
+    color: @yellow;
+}
+
+/* -----------------------------------------------------------------------------
+ * Clock
  * -------------------------------------------------------------------------- */
 
 #clock {
     color: @text;
-    /* font-weight: bold; */
 }
 
-/* Battery */
+/* -----------------------------------------------------------------------------
+ * Battery
+ * -------------------------------------------------------------------------- */
+
 #battery {
     color: @text;
 }
@@ -161,30 +226,34 @@ tooltip label {
     animation-direction: alternate;
 }
 
-/* Hardware Group */
+/* -----------------------------------------------------------------------------
+ * Hardware Group
+ * -------------------------------------------------------------------------- */
+
 #cpu {
-    color: @lavender; /* Soft purple */
+    color: @lavender;
 }
 
 #memory {
-    color: @lavender; /* Soft blue */
+    color: @lavender;
 }
 
-/* Backlight */
-#backlight {
-    color: @yellow; /* Sun color, but pastel */
-}
+/* -----------------------------------------------------------------------------
+ * Pulseaudio
+ * -------------------------------------------------------------------------- */
 
-/* Pulseaudio */
 #pulseaudio {
     color: @lavender;
 }
 
 #pulseaudio.muted {
-    color: @surface2; /* Greyed out when muted */
+    color: @surface2;
 }
 
-/* Tray */
+/* -----------------------------------------------------------------------------
+ * Tray
+ * -------------------------------------------------------------------------- */
+
 #tray {
     padding-left: 2px;
 }
@@ -203,20 +272,10 @@ tooltip label {
     border: 1px solid @surface1;
 }
 
-/* MPD (Music) */
-#mpd {
-    color: @subtext0;
-}
-#mpd.playing {
-    color: @teal;
-}
+/* -----------------------------------------------------------------------------
+ * Taskbar
+ * -------------------------------------------------------------------------- */
 
-/* Keyboard State */
-#keyboard-state {
-    color: @subtext1;
-}
-
-/* Wlr Taskbar */
 #taskbar button {
     box-shadow: none;
     text-shadow: none;
@@ -227,7 +286,7 @@ tooltip label {
 }
 
 #taskbar button.active {
-    background-color: @surface1; /* Subtle highlight for active window */
+    background-color: @surface1;
     color: @text;
 }
 

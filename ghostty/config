@@ -60,7 +60,8 @@ font-size = 12
 background-opacity = 0.7
 
 # --- inbuilt theme
-theme = Synthwave Alpha
+theme = Sleepy Hollow
+# theme = Synthwave Alpha
 # theme = Catppuccin Mocha
 # --- slightly dimmed foreground
 # foreground = #bac2de

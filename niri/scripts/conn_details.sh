@@ -7,7 +7,7 @@ GW=$(ip route | grep default | grep "$WB_CARRIER_IFACE" | awk '{print $3}' | hea
 if [ "$WB_IS_WWAN" = "1" ]; then
     echo "{\"text\": \"󰈀 $WB_CARRIER_IFACE  $WB_CARRIER_IP  GW: $GW\"}"
 else
-    SSID=$(iwgetid -r 2>/dev/null || echo "Unknown")
-    SIG=$(iwgetid -r 2>/dev/null; cat /proc/net/wireless 2>/dev/null | awk 'NR==3{print int($3)}')
-    echo "{\"text\": \" $WB_CARRIER_IFACE  $WB_CARRIER_IP  $SSID  GW: $GW\"}"
+    SSID=$(nmcli -t -f active,ssid dev wifi 2>/dev/null | grep '^yes' | cut -d: -f2)
+    [ -z "$SSID" ] && SSID="Unknown"
+    echo "{\"text\": \"󰤨 $WB_CARRIER_IFACE  $WB_CARRIER_IP  $SSID  GW: $GW\"}"
 fi
